@@ -1,0 +1,308 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f00; 
+  border-bottom: 2px solid black;
+  opacity: 2;
+  min-height: 380px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #f00;
+  max-width: 1076px;
+  width: 100%;
+}
+
+.nav img {
+  width: 9rem; 
+  padding: 1rem; 
+}
+
+#btnOpen {
+  all: unset;
+  border: 1px solid black; 
+  border-radius: 12px;
+  padding: 0;
+  background-color: #fbbf24;
+  height: 90px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease-in-out; 
+  cursor: pointer; 
+}
+
+.ul__list {
+  display: grid;
+  animation: moveDown 1s ease-in-out ;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  padding: 1rem; 
+  list-style: none; 
+  margin: 0; 
+}
+
+.nav__items {
+  width: 30%; 
+  padding: 0.25rem; 
+}
+
+.btn, #todos {
+  all: unset;
+  border: 1px solid black; 
+  border-radius: 12px;
+  color: white; 
+  padding: 0.5rem 2rem; 
+  transition: transform 0.4s ease-in-out; 
+  cursor: pointer; 
+}
+
+.btn:hover {
+  transform: scale(1.1); 
+}
+
+#btnOpen:hover {
+  transform: scale(1.1); 
+}
+
+.main {
+  background-color: #f00; 
+}
+
+.content__card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem; 
+  background-color: #fff;
+  margin: 0 auto;
+  border: 6px solid black;
+  max-width: 1000px;
+  padding: 2rem;
+}
+
+.pokemon-card {
+  background-color: #f3f4f6; 
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  padding-block: 1rem;
+  text-transform: uppercase;
+  transition: transform 0.5s ease-in-out;
+  isolation: isolate;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-card:hover {
+  transform: scale(1.1); 
+}
+
+.pokemon-card:hover .img-pokemon img{
+  transform: scale(1.3);
+}
+
+.pokemos-id-back {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6rem;
+  font-weight: 800;
+  color: rgba(107, 114, 128, 0.5); 
+  z-index: -1;
+}
+
+.img-pokemon {
+  padding-inline: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.img-pokemon img {
+  width: 100%;
+  max-width: 6rem; 
+  transition: transform 0.5s ease-in-out;
+}
+
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .5rem; 
+  padding-inline: 1rem;
+}
+
+.name-pokemon {
+  font-size: 1.8rem;
+}
+
+.name-contenedor, .tipe-pokemon, .pokemon-stats {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokemon-id, .tipe, .altura, .peso {
+  background-color: #6b7280; 
+  color: #fff;
+  padding: 4px 8px; 
+  border-radius: 12px;
+}
+
+.tipe {
+  background-color: #d1d5db; 
+}
+
+.footer {
+  background-image: url(img/background.webp);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  height: 70vh;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.overlay {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-contain img {
+  width: 9rem; 
+  padding: 1rem;
+}
+
+.info-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* btns styles*/
+.btn:hover {
+  transform: scale(1.1); 
+}
+
+/* Estilos específicos para cada botón */
+#fairy {
+  background-color: #fbcfe8; 
+}
+
+#normal {
+  background-color: #d1d5db; 
+}
+
+#fire {
+  background-color: #f87171;
+}
+
+#water {
+  background-color: #60a5fa; 
+}
+
+#electric {
+  background-color: #fbbf24; 
+}
+
+#grass {
+  background-color: #4ade80; 
+}
+
+#ice {
+  background-color: #67e8f9; 
+}
+
+#fighting {
+  background-color: #fca5a1;
+}
+
+#poison {
+  background-color: #a855f7; 
+}
+
+#ground {
+  background-color: #d97706; 
+}
+
+#flying {
+  background-color: #60a5fa; 
+}
+
+#psychic {
+  background-color: #ec4899; 
+}
+
+#bug {
+  background-color: #86efac; 
+}
+
+#rock {
+  background-color: #4b5563; 
+}
+
+#ghost {
+  background-color: #7c3aed; 
+}
+
+#dragon {
+  background-color: #2563eb; 
+}
+
+#dark {
+  background-color: #1f2937; 
+}
+
+#steel {
+  background-color: #9ca3af; 
+}
+
+/* Estilo para el botón "Todos" */
+#todos {
+  background-color: white; 
+  color: black; 
+}
+
+@media screen and (max-width: 700px) {
+  .footer {
+    height: 100vh;
+  }
+
+  .footer-contain {
+    width: 90vw;
+  }
+}
