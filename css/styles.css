@@ -166,7 +166,7 @@ body {
 }
 
 .footer {
-  background-image: url(img/background.webp);
+  background-color: rgba(107, 114, 128, 0.5);
   background-repeat: no-repeat;
   background-size:cover;
   background-position: center;

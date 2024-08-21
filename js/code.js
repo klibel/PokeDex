@@ -1,6 +1,7 @@
 const listPokemon = document.querySelector('#list__pokemon');
 const btns = document.querySelectorAll('.btn');
 const btnTodos = document.querySelector('#todos')
+const main = document.querySelector('.main');
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 let pokemons = []; 
 
@@ -72,16 +73,11 @@ function btnFilterPokemon(pokemons) {
   listPokemon.innerHTML = '';
 
   pokemons.forEach(pokemon => {
-    let tipe = pokemon.types.map((type) => `<p class="tipe" id="${type.type.name}">${type.type.name}</p>`);
+    let tipe = pokemon.types.map((type) => `<p class="tipe" id="${type.type.name}"> ${type.type.name} </p>`);
     tipe = tipe.join('');
 
-    let pokemonId = pokemon.id.toString();
-    if (pokemonId.length === 1) {
-      pokemonId = "00" + pokemonId;
-    } else if (pokemonId.length === 2) {
-      pokemonId = "0" + pokemonId;
-    }
-
+    let pokemonId = pokemon.id.toString().padStart(3, '0');
+    
     const div = document.createElement('div');
     div.classList.add('pokemon-card');
     div.innerHTML = 
@@ -108,4 +104,35 @@ function btnFilterPokemon(pokemons) {
     listPokemon.appendChild(div);
   });
 }
+
+listPokemon.addEventListener('click', e => {
+  const card = e.target.closest('.pokemon-card');
+  if (card) {
+    transferInformation(card);
+  }
+});
+
+function transferInformation(pokemon) {
+  const imagen = pokemon.querySelector('img').src;
+  const nombre = pokemon.querySelector('h2').textContent;
+  const number = pokemon.querySelector('.pokemon-id').textContent;
+  const tipe = Array.from(pokemon.querySelectorAll('.tipe')).map(t => t.textContent).join(', ');
+  const height = pokemon.querySelector('.altura').textContent;
+  const weight = pokemon.querySelector('.peso').textContent;
+
+  const infoPokemon = {
+    imagen: imagen,
+    nombre: nombre,
+    number: number,
+    tipe: tipe,
+    height: height,
+    weight: weight
+  };
+
+  localStorage.setItem('infoPokemon', JSON.stringify(infoPokemon));
+  window.location.href = "pokemon.html";
+}
+
+
+
 

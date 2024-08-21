@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.header {
+  background-color: #f00;
+  border-bottom: 2px solid black;
+}
+
+.nav {
+  display: flex;
+  justify-content: left;
+  background-color: #f00;
+  max-width: 1000px;
+
+}
+
+.nav img {
+  width: 9rem; 
+  padding: 1rem; 
+}
+
+.main {
+  background: linear-gradient(to bottom, rgb(41, 41, 41) 50%, rgba(0, 0, 0, 0.89) 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.cardImg {
+  isolation: isolate;
+}
+
+.cardImg img {
+  width: 70vw;
+  max-width: 600px;
+}
+
+.info__card {
+  color: rgb(153, 153, 153);
+}
+
+.info__card h1 {
+  border-top: 4px solid rgb(153, 153, 153);
+  border-bottom: 4px solid rgb(153, 153, 153);
+  padding: 4px;
+  text-align: center;
+}
+
+.info__card h2 {
+  text-align: center;
+}
+
+.info__card strong {
+  font-size: larger;
+}
+
+#volver {
+  all: unset;
+  background-color: #f00;
+  color: #fbbf24;
+  transition: transform 0.4s ease-in-out;
+  border-radius: 12px;
+  padding: 0.25rem 0.75rem; 
+  text-align: center;
+}
+
+#volver:hover {
+  transform: scale(1.1); 
+}
+
+.tipe-pokemon {
+  width: 100%;
+  text-align: center;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.tipePokemon {
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.096);
+  border-radius: 50px;
+  margin-bottom: 5px;
+  gap: 1rem;
+}
+
+.tipes {
+  display: flex;
+}
+
+.tipes p {
+  padding-left: 10px;
+}
+
+/* styles the types pokemon*/
+#fairy {
+  color: #fbcfe8; 
+}
+
+#normal {
+  color: #d1d5db; 
+}
+
+#fire {
+  color: #f87171;
+}
+
+#water {
+  color: #60a5fa; 
+}
+
+#electric {
+  color: #fbbf24; 
+}
+
+#grass {
+  color: #4ade80;
+  
+}
+
+#ice {
+  color: #67e8f9; 
+}
+
+#fighting {
+  color: #fca5a1;
+}
+
+#poison {
+  color: #a855f7; 
+}
+
+#ground {
+  color: #d97706; 
+}
+
+#flying {
+  color: #60a5fa; 
+}
+
+#psychic {
+  color: #ec4899; 
+}
+
+#bug {
+  color: #86efac; 
+}
+
+#rock {
+  color: #4b5563; 
+}
+
+#ghost {
+  color: #7c3aed; 
+}
+
+#dragon {
+  color: #2563eb; 
+}
+
+#dark {
+  color: #1f2937; 
+}
+
+#steel {
+  color: #9ca3af; 
+}
