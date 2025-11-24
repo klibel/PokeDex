@@ -12,49 +12,75 @@ body {
   background-color: #f00; 
   border-bottom: 2px solid black;
   opacity: 2;
-  min-height: 380px;
 }
 
+/* ==================================== */
+/* 1. ESTRUCTURA PRINCIPAL Y ENCABEZADO */
+/* ==================================== */
+
 .nav {
-  display: flex;
-  flex-direction: column;
-  background-color: #f00;
+  /* Centrar el NAV en la página */
+  margin: 0 auto; 
   max-width: 1076px;
   width: 100%;
+  
+  display: flex;
+  flex-direction: column; /* Por defecto, en móvil, se apila */
+  background-color: #f00; /* Fondo rojo */
+}
+
+.nav__header {
+  display: flex;
+  justify-content: space-between; /* Mueve el logo y el botón a los extremos */
+  align-items: center;
+  padding: 0.5rem 1rem; /* Padding alrededor del logo y el botón */
 }
 
 .nav img {
   width: 9rem; 
-  padding: 1rem; 
+  padding: 0; /* Ya tenemos padding en el .nav__header */
 }
+
+/* ==================================== */
+/* 2. BOTÓN DE ABRIR (Móvil) */
+/* ==================================== */
 
 #btnOpen {
   all: unset;
   border: 1px solid black; 
   border-radius: 12px;
-  padding: 0;
-  background-color: #fbbf24;
-  height: 90px;
-  width: 20px;
+  height: 40px; 
+  width: 40px; 
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fbbf24;
   transition: transform 0.4s ease-in-out; 
   cursor: pointer; 
+  font-size: 1.5rem; /* Icono visible */
 }
 
 .ul__list {
-  display: grid;
-  animation: moveDown 1s ease-in-out ;
-  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-  padding: 1rem; 
   list-style: none; 
+  padding: 20px; 
   margin: 0; 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 0.5rem 1.5rem;
+  max-height: 0; /* Colapsa la lista */
+  overflow: hidden; /* Oculta el contenido */
+  opacity: 0;
+  transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out; 
+}
+
+.ul__list--visible {
+  max-height: 550px; /* Suficiente para mostrar todos los elementos */
+  opacity: 1;
 }
 
 .nav__items {
-  width: 30%; 
-  padding: 0.25rem; 
+  width: 100%; 
+  padding: 0;
 }
 
 .btn, #todos {
@@ -62,17 +88,37 @@ body {
   border: 1px solid black; 
   border-radius: 12px;
   color: white; 
-  padding: 0.5rem 2rem; 
+  padding: 0.5rem 0;
   transition: transform 0.4s ease-in-out; 
-  cursor: pointer; 
+  cursor: pointer;
+  width: 100%; 
+  display: block; 
+  text-align: center;
 }
 
-.btn:hover {
-  transform: scale(1.1); 
+/* Estado al pasar el mouse */
+.btn:hover, #todos:hover {
+    transform: scale(1.01); /* Agrega un pequeño efecto */
+    background-color: #fca311; /* Color de fondo al pasar el mouse */
 }
 
-#btnOpen:hover {
-  transform: scale(1.1); 
+@media (min-width: 768px) {
+    
+    /* OCULTAR EL BOTÓN DE MENÚ EN ESCRITORIO */
+    #btnOpen {
+        display: none;
+    }
+
+    /* MOSTRAR LA LISTA COMPLETA Y ACOMÓDALA */
+    .ul__list {
+        /* Se sobrescriben los estilos de colapso */
+        max-height: none;
+        opacity: 1;
+        
+        /* Nuevo grid para escritorio: Repetir columnas de tamaño flexible */
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+        gap: 0.75rem; /* Más espacio entre botones */
+    }
 }
 
 .main {
@@ -129,7 +175,7 @@ body {
 
 .img-pokemon img {
   width: 100%;
-  max-width: 6rem; 
+  max-width: 7rem; 
   transition: transform 0.5s ease-in-out;
 }
 
@@ -143,7 +189,7 @@ body {
 }
 
 .name-pokemon {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .name-contenedor, .tipe-pokemon, .pokemon-stats {
@@ -165,52 +211,123 @@ body {
   background-color: #d1d5db; 
 }
 
-.footer {
-  background-color: rgba(107, 114, 128, 0.5);
-  background-repeat: no-repeat;
-  background-size:cover;
-  background-position: center;
-  height: 70vh;
-  color: white;
-  overflow: hidden;
-  position: relative;
+*::before,
+*::after {
+  box-sizing: border-box; /* Fundamental para evitar que padding/border causen overflow */
 }
 
-.overlay {
-  position: absolute; 
-  top: 0;
-  left: 0;
-  width: 100%; 
-  height: 100%; 
-  background-color: rgba(0, 0, 0, 0.5); 
-  z-index: 1; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.footer {
+    background-color: #000; 
+    min-height: auto; 
+    padding: 0;
+    position: relative;
+    color: #f8f8f8; /* Texto blanco */
+    /* Aseguramos que nada se salga horizontalmente del footer */
+    overflow-x: hidden; 
 }
 
 .footer-contain {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 70vw;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+    max-width: 1200px; 
+    width: 90%; /* Ancho flexible para ser responsive */
+    margin: 0 auto; /* Centrado automático */
+    padding: 3rem 0; /* Padding superior e inferior para altura y espacio */
+    
+    /* Estilo por defecto (Móvil) - Las columnas se apilan */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; 
+    text-align: left;
 }
 
-.footer-contain img {
-  width: 9rem; 
-  padding: 1rem;
+/* 🖥️ Media Query para Desktop (3 Columnas) */
+@media (min-width: 768px) {
+  .footer-contain {
+      /* CSS Grid para manejar las 3 columnas */
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr; /* Logo/Intro más ancha */
+      gap: 3rem; /* Aumentamos el espacio entre columnas */
+  }
 }
 
-.info-footer {
+.footer__logo {
+  width: 8rem; 
+  margin-bottom: 1rem;
+}
+
+.footer__intro-text, 
+.contact-group p {
+  font-size: 0.9rem; /* Un poco más grande para mejor lectura */
+  line-height: 1.5;
+  color: #bdbdbd;
+}
+
+.footer__title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffe66d; 
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.footer__links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__links li {
+  font-size: 0.75rem;
+}
+
+.footer__links a {
+  color: #f8f8f8;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: color 0.2s;
+}
+
+.footer__links a:hover {
+  color: #cc0000; 
+}
+
+.link-todos {
+  font-weight: bold;
+  color: #ff4c4c !important; 
+  border-bottom: 2px solid #ff4c4c;
+}
+
+.social-icons {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  filter: invert(1);
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.social-icon:hover {
+  opacity: 1;
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 2rem;
+}
+
+/* Estilos específicos para móvil */
+@media (max-width: 767px) {
+  .footer__copyright {
+      text-align: left; /* Volvemos a la izquierda en móvil para alineación */
+      margin-top: 3rem; 
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
 
 /* btns styles*/

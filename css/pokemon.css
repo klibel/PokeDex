@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
+  background: linear-gradient(to bottom, rgb(41, 41, 41) 50%, rgba(0, 0, 0, 0.89) 50%);
 }
 
 .header {
@@ -23,11 +24,10 @@ body {
 }
 
 .main {
-  background: linear-gradient(to bottom, rgb(41, 41, 41) 50%, rgba(0, 0, 0, 0.89) 50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .card {
@@ -43,7 +43,7 @@ body {
 }
 
 .cardImg img {
-  width: 70vw;
+  width: 50vw;
   max-width: 600px;
 }
 

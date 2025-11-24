@@ -9,49 +9,83 @@
 </head>
 <body>
 	<header class="header">
-    <nav class="nav">
-        <img src="img/logo(pokedex).svg" alt="Pokedex">
-				<ul class="ul__list" id="boxBtns">
-						<li class="nav__items"><button class="btn" id="fairy">Fairy</button></li>
-						<li class="nav__items"><button class="btn" id="normal">Normal</button></li>
-						<li class="nav__items"><button class="btn" id="fire">Fire</button></li>
-						<li class="nav__items"><button class="btn" id="water">Water</button></li>
-						<li class="nav__items"><button class="btn" id="electric">Electric</button></li>
-						<li class="nav__items"><button class="btn" id="grass">Grass</button></li>
-						<li class="nav__items"><button class="btn" id="ice">Ice</button></li>
-						<li class="nav__items"><button class="btn" id="fighting">Fighting</button></li>
-						<li class="nav__items"><button class="btn" id="poison">Poison</button></li>
-						<li class="nav__items"><button class="btn" id="ground">Ground</button></li>
-						<li class="nav__items"><button class="btn" id="flying">Flying</button></li>
-						<li class="nav__items"><button class="btn" id="psychic">Psychic</button></li>
-						<li class="nav__items"><button class="btn" id="bug">Bug</button></li>
-						<li class="nav__items"><button class="btn" id="rock">Rock</button></li>
-						<li class="nav__items"><button class="btn" id="ghost">Ghost</button></li>
-						<li class="nav__items"><button class="btn" id="dragon">Dragon</button></li>
-						<li class="nav__items"><button class="btn" id="dark">Dark</button></li>
-						<li class="nav__items"><button class="btn" id="steel">Steel</button></li>
-						<li class="nav__items"><button class="btn__todos" id="todos">Todos</button></li>
-				</ul>
-    </nav>
+		<nav class="nav" id="nav">
+			<div class="nav__header">
+					<img src="img/logo(pokedex).svg" alt="Pokedex">
+					<button id="btnOpen" aria-label="Abrir menú de tipos">
+							<span class="menu-icon">☰</span>
+					</button>
+			</div>
+	
+			<ul class="ul__list" id="boxBtns">
+					<li class="nav__items"><button class="btn" id="fairy">Fairy</button></li>
+					<li class="nav__items"><button class="btn" id="normal">Normal</button></li>
+					<li class="nav__items"><button class="btn" id="fire">Fire</button></li>
+					<li class="nav__items"><button class="btn" id="water">Water</button></li>
+					<li class="nav__items"><button class="btn" id="electric">Electric</button></li>
+					<li class="nav__items"><button class="btn" id="grass">Grass</button></li>
+					<li class="nav__items"><button class="btn" id="ice">Ice</button></li>
+					<li class="nav__items"><button class="btn" id="fighting">Fighting</button></li>
+					<li class="nav__items"><button class="btn" id="poison">Poison</button></li>
+					<li class="nav__items"><button class="btn" id="ground">Ground</button></li>
+					<li class="nav__items"><button class="btn" id="flying">Flying</button></li>
+					<li class="nav__items"><button class="btn" id="psychic">Psychic</button></li>
+					<li class="nav__items"><button class="btn" id="bug">Bug</button></li>
+					<li class="nav__items"><button class="btn" id="rock">Rock</button></li>
+					<li class="nav__items"><button class="btn" id="ghost">Ghost</button></li>
+					<li class="nav__items"><button class="btn" id="dragon">Dragon</button></li>
+					<li class="nav__items"><button class="btn" id="dark">Dark</button></li>
+					<li class="nav__items"><button class="btn" id="steel">Steel</button></li>
+					<li class="nav__items"><button class="btn" id="todos">Todos</button></li>
+			</ul>
+	</nav>
 	</header>
 	<main class="main">
 		<section class="content__card" id="list__pokemon"></section>
 	</main>
 	<footer class="footer">
-		<div class="overlay">
-			<div class="footer-contain">
-				<img src="img/logo(pokedex).svg" alt="pokedex">
-				<div class="info-footer">
-					<p>La Pokédex es una herramienta fundamental en el mundo Pokémon, actuando como una enciclopedia virtual portátil que los entrenadores utilizan para registrar y obtener información sobre las diversas especies de Pokémon que encuentran durante sus aventuras. Cada vez que un entrenador captura un Pokémon o lo ve por primera vez, la Pokédex actualiza su base de datos con detalles sobre esa especie, incluyendo su apariencia, habilidades, tipos y estadísticas.</p>
-					<ul>
-						<li><strong>Registro de Especies:</strong> La Pokédex permite a los entrenadores llevar un registro de todos los Pokémon que han encontrado. No se considera completa hasta que se han registrado todas las especies disponibles en la región.</li>
-						<li><strong>Información Detallada:</strong> Proporciona información específica sobre cada Pokémon, como su tipo (agua, fuego, planta, etc.), sus movimientos, evoluciones y hábitats.</li>
-						<li><strong>Interactividad:</strong> En algunos juegos, la Pokédex puede interactuar con otros dispositivos, permitiendo a los entrenadores compartir información y sincronizar datos entre varias Pokédex.</li>
-						<li><strong>Actualizaciones en Tiempo Real:</strong> A medida que los entrenadores avanzan en su viaje y descubren nuevos Pokémon, la Pokédex se actualiza automáticamente, lo que la convierte en una herramienta dinámica y esencial para la exploración.</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+    <div class="footer-contain">
+        <div class="footer__brand-info">
+            <img src="img/logo(pokedex).svg" alt="Pokedex Logo" class="footer__logo">
+            <p class="footer__intro-text">
+                La Pokédex es la enciclopedia digital esencial para registrar y conocer a las más de 250 especies de Pokémon en todas las regiones.
+            </p>
+            <p class="footer__copyright">
+                © 2025 Klibel's Pokedex Project. Todos los derechos reservados.
+            </p>
+        </div>
+
+        <div class="footer__links">
+            <h3 class="footer__title">Tipos Pokémon</h3>
+            <ul>								
+							<li><p>Normal</p></li>
+							<li><p>Fuego</p></li>
+							<li><p>Agua</p></li>
+							<li><p>Eléctrico</p></li>
+							<li><p>Planta</p></li>
+							<li><p>Tierra</p></li>
+							<li><p>Psíquico</p></li>
+							<li><p>Roca</p></li>
+              <li><a href="#nav" class="link-todos">Ver Todos los Tipos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__contact-social">
+            <h3 class="footer__title">Sobre el Proyecto</h3>
+            <div class="contact-group">
+                <p><strong>Desarrollador:</strong> Klibel</p>
+                <p><strong>Versión:</strong> 1.0.0 (Beta)</p>
+                <p><strong>Tecnologías:</strong> HTML, CSS Grid, JavaScript</p>
+            </div>
+            
+            <h3 class="footer__title footer__social-title">Síguenos</h3>
+            <div class="social-icons">
+                <a href="#" aria-label="GitHub"><img src="img/github-icon.svg" alt="GitHub" class="social-icon"></a>
+                <a href="#" aria-label="LinkedIn"><img src="img/linkedin-icon.svg" alt="LinkedIn" class="social-icon"></a>
+                <a href="#" aria-label="Twitter"><img src="img/twitter-icon.svg" alt="Twitter" class="social-icon"></a>
+            </div>
+        </div>
+    </div>
 	</footer>
 	
 

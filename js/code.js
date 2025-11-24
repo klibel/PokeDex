@@ -14,6 +14,23 @@ for (let i = 1; i <= 250; i++) {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const btnOpen = document.getElementById('btnOpen');
+  const ulList = document.getElementById('boxBtns');
+
+  btnOpen.addEventListener('click', () => {
+      // Alterna la clase que controla la visibilidad y animación
+      ulList.classList.toggle('ul__list--visible');
+      
+      // Opcional: Cambiar el icono del botón
+      if (ulList.classList.contains('ul__list--visible')) {
+          btnOpen.querySelector('.menu-icon').textContent = '✕';
+      } else {
+          btnOpen.querySelector('.menu-icon').textContent = '☰';
+      }
+  });
+});
+
 function insertPokemonHtml(pokemon) {
   let tipe = pokemon.types.map((type) => `<p class="tipe" id="${type.type.name}">${type.type.name}</p>`);
   tipe = tipe.join('');
