@@ -320,6 +320,69 @@ body {
   margin-top: 2rem;
 }
 
+/* ==================================== */
+/* 3. BOTÓN CARGAR MÁS (SOFISTICADO)    */
+/* ==================================== */
+
+.box__load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f00; /* Continúa el fondo de la Pokédex */
+  padding: 3rem 0;
+  margin: 0 !important; /* Elimina cualquier margen residual */
+  max-width: 1000px;
+  margin: 0 auto !important;
+}
+
+#btnLoadMore {
+  all: unset;
+  background-color: #1e293b; /* Fondo oscuro elegante */
+  color: #f8fafc; /* Texto blanco suave */
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.75rem 2.5rem;
+  border: 2px solid #0f172a;
+  border-radius: 50px; /* Bordes completamente redondeados (Estilo píldora) */
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Efectos Interactivos del Botón Moderno */
+#btnLoadMore:hover {
+  background-color: #0f172a;
+  transform: translateY(-2px); /* Pequeña elevación */
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.3), 0 0 0 4px rgba(251, 191, 36, 0.2); /* Sutil aura dorada */
+  color: #fbbf24; /* El texto cambia a amarillo sutil */
+}
+
+#btnLoadMore:active {
+  transform: translateY(1px); /* Efecto de pulsación física */
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.2);
+}
+
+/* ==================================== */
+/* RETOQUES EXTRA DE LIMPIEZA           */
+/* ==================================== */
+
+/* Ajuste en el contenedor principal para que no colapse con el botón */
+.content__card {
+  border-bottom: none; /* Quitamos el borde inferior para que se fusione limpio con el bloque del botón */
+}
+
+/* Corregir margen lateral en pantallas medianas */
+@media (max-width: 1000px) {
+  .content__card, .box__load-more {
+    margin-inline: 1rem !important;
+  }
+}
+
 /* Estilos específicos para móvil */
 @media (max-width: 767px) {
   .footer__copyright {
